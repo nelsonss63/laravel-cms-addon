@@ -45,7 +45,7 @@ class MenusController extends \Cednet\Cms\CmsAdminBaseController
 
         }
 
-        return View::make('cms::edit.menus.menu', array(
+        return View::make('cms::menus.menu', array(
             "menu" => $menu
         ));
     }

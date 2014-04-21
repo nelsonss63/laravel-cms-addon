@@ -25,14 +25,14 @@ class UsersController extends \Cednet\Cms\CmsAdminBaseController
 
     public function users()
     {
-        return View::make('cms::edit.users.users', array(
+        return View::make('cms::users.users', array(
             "users" => User::all()
         ));
     }
 
     public function createUser()
     {
-        return View::make('cms::edit.users.user', array(
+        return View::make('cms::users.user', array(
             "user" => new User()
         ));
     }
@@ -43,7 +43,7 @@ class UsersController extends \Cednet\Cms\CmsAdminBaseController
         $populate = $user->getAttributes();
         unset($populate['password']);
         Former::populate($populate);
-        return View::make('cms::edit.users.user', array(
+        return View::make('cms::users.user', array(
             "user" => $user
         ));
     }

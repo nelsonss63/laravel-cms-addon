@@ -14,7 +14,7 @@
 
     @foreach($settings as $setting)
 
-        {{ Former::text($setting->name)->value($setting->value)->help(' '.$setting->name.' <a href="'.route('removeSetting', array($setting->id)).'" onclick="return confirm(\'Confirm\'); return false;">x</a>') }}
+        {{ Former::text($setting->name)->value($setting->value)->help(' <a href="'.route('removeSetting', array($setting->id)).'" onclick="return confirm(\'Confirm\'); return false;">x</a>') }}
 
     @endforeach
 

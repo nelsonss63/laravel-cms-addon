@@ -26,7 +26,7 @@ class SettingsController extends \Cednet\Cms\CmsAdminBaseController
     /** Create Setting */
     public function settings()
     {
-        return View::make('cms::edit.settings.settings', array(
+        return View::make('cms::settings.settings', array(
             "settings" => Setting::orderBy("name", "asc")->get()
         ));
     }
