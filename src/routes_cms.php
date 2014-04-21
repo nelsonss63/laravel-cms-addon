@@ -70,8 +70,10 @@ Route::get('cms/login', array('as' => 'cmsLogin', 'uses' => '\Cednet\Cms\PageCon
  * All routes for this CMS are predefined URL:s created by the CMS
  * This CMS is not meant to have thousands of pages = this is OK up to XX numbers of pages
  */
-foreach(\Cms\Libraries\Helper::getRoutes() as $page) {
-    Route::get($page->slug, '\Cednet\Cms\PageController@page');
+if($cmsRoutes = \Cms\Libraries\Helper::getRoutes()) {
+    foreach($cmsRoutes as $page) {
+        Route::get($page->slug, '\Cednet\Cms\PageController@page');
+    }
 }
 
 
