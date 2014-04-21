@@ -4,7 +4,7 @@
 
 <h1>Login to CMS admin</h1>
 
-{{ Former::horizontal_open('login')
+{{ Former::horizontal_open()
       ->secure()
       ->rules(array(
          'username' => 'required',

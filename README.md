@@ -23,4 +23,9 @@ Create all necessary tables using:
     php artisan migrate --package="cednet/laravel-cms-addon"
 
 
+Publish all CMS assets
+
+    php artisan asset:publish cednet/laravel-cms-addon
+
+
 
