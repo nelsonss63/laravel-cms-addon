@@ -47,7 +47,7 @@
 <div class="center">
 
    <div>
-      <img src="/packages/cednet/cms/css/images/smc_404.png" />
+      <img src="/packages/cednet/laravel-cms-addon/css/images/smc_404.png" />
    </div>
    <h1>Sidan hittades inte</h1>
    <p>

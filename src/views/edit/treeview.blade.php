@@ -1,6 +1,6 @@
 <!-- Tree View -->
-<link href="/packages/cednet/cms/css/edit/jquery.treeview.css" rel="stylesheet">
-<script src="/packages/cednet/cms/js/edit/jquery.treeview.js"></script>
+<link href="/packages/cednet/laravel-cms-addon/css/edit/jquery.treeview.css" rel="stylesheet">
+<script src="/packages/cednet/laravel-cms-addon/js/edit/jquery.treeview.js"></script>
 <script type="text/javascript">
    $(function() {
       $("#tree").treeview({

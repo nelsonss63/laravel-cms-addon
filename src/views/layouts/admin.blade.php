@@ -7,10 +7,10 @@
    <meta name="description" content="">
    <meta name="author" content="">
 
-   <script src="/packages/cednet/cms/bootstrap/js/jquery.js"></script>
+   <script src="/packages/cednet/laravel-cms-addon/bootstrap/js/jquery.js"></script>
 
    <!-- Le styles -->
-   <link href="/packages/cednet/cms/bootstrap/css/bootstrap.css" rel="stylesheet">
+   <link href="/packages/cednet/laravel-cms-addon/bootstrap/css/bootstrap.css" rel="stylesheet">
    <style type="text/css">
       body {
          padding-top: 60px;
@@ -29,18 +29,18 @@
          }
       }
    </style>
-   <link href="/packages/cednet/cms/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+   <link href="/packages/cednet/laravel-cms-addon/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 
    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
    <!--[if lt IE 9]>
-   <script src="/packages/cednet/cms/bootstrap/js/html5shiv.js"></script>
+   <script src="/packages/cednet/laravel-cms-addon/bootstrap/js/html5shiv.js"></script>
    <![endif]-->
 
    <!-- Fav and touch icons -->
-   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/packages/cednet/cms/bootstrap/ico/apple-touch-icon-144-precomposed.png">
-   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/packages/cednet/cms/bootstrap/ico/apple-touch-icon-114-precomposed.png">
-   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/packages/cednet/cms/bootstrap/ico/apple-touch-icon-72-precomposed.png">
-   <link rel="apple-touch-icon-precomposed" href="/packages/cednet/cms/bootstrap/ico/apple-touch-icon-57-precomposed.png">
+   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/packages/cednet/laravel-cms-addon/bootstrap/ico/apple-touch-icon-144-precomposed.png">
+   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/packages/cednet/laravel-cms-addon/bootstrap/ico/apple-touch-icon-114-precomposed.png">
+   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/packages/cednet/laravel-cms-addon/bootstrap/ico/apple-touch-icon-72-precomposed.png">
+   <link rel="apple-touch-icon-precomposed" href="/packages/cednet/laravel-cms-addon/bootstrap/ico/apple-touch-icon-57-precomposed.png">
 </head>
 
 <body>
@@ -96,18 +96,18 @@
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-transition.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-alert.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-modal.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-dropdown.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-scrollspy.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-tab.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-tooltip.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-popover.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-button.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-collapse.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-carousel.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-typeahead.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-transition.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-alert.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-modal.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-dropdown.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-scrollspy.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-tab.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-tooltip.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-popover.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-button.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-collapse.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-carousel.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-typeahead.js"></script>
 
 </body>
 </html>

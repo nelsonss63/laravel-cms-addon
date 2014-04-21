@@ -20,8 +20,8 @@
                </li>
             </ul>
             <ul class="nav">
-               <li class="active"><a href="{{ route('cmsEdit') }}">{{ Lang::get('cms::m.edit') }}</a></li>
-               <li class="active"><a href="{{ route('cmsAdmin') }}">{{ Lang::get('cms::m.admin') }}</a></li>
+               <li><a href="{{ route('cmsEdit') }}">{{ Lang::get('cms::m.edit') }}</a></li>
+               <li><a href="{{ route('cmsAdmin') }}">{{ Lang::get('cms::m.admin') }}</a></li>
             </ul>
          </div><!--/.nav-collapse -->
       </div>

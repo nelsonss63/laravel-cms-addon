@@ -8,7 +8,7 @@
    <meta name="author" content="">
 
    <!-- Le styles -->
-   <link href="/packages/cednet/cms/bootstrap/css/bootstrap.css" rel="stylesheet">
+   <link href="/packages/cednet/laravel-cms-addon/bootstrap/css/bootstrap.css" rel="stylesheet">
    <style type="text/css">
       body {
          padding-top: 60px;
@@ -27,39 +27,39 @@
          }
       }
    </style>
-   <link href="/packages/cednet/cms/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+   <link href="/packages/cednet/laravel-cms-addon/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 
    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
    <!--[if lt IE 9]>
-   <script src="/packages/cednet/cms/bootstrap/js/html5shiv.js"></script>
+   <script src="/packages/cednet/laravel-cms-addon/bootstrap/js/html5shiv.js"></script>
    <![endif]-->
 
    <!-- Fav and touch icons -->
-   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/packages/cednet/cms/bootstrap/ico/apple-touch-icon-144-precomposed.png">
-   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/packages/cednet/cms/bootstrap/ico/apple-touch-icon-114-precomposed.png">
-   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/packages/cednet/cms/bootstrap/ico/apple-touch-icon-72-precomposed.png">
-   <link rel="apple-touch-icon-precomposed" href="/packages/cednet/cms/bootstrap/ico/apple-touch-icon-57-precomposed.png">
+   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/packages/cednet/laravel-cms-addon/bootstrap/ico/apple-touch-icon-144-precomposed.png">
+   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/packages/cednet/laravel-cms-addon/bootstrap/ico/apple-touch-icon-114-precomposed.png">
+   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/packages/cednet/laravel-cms-addon/bootstrap/ico/apple-touch-icon-72-precomposed.png">
+   <link rel="apple-touch-icon-precomposed" href="/packages/cednet/laravel-cms-addon/bootstrap/ico/apple-touch-icon-57-precomposed.png">
    <link rel="shortcut icon" href="/favicon.png">
 
-   <script src="/packages/cednet/cms/js/edit/jquery.js"></script>
+   <script src="/packages/cednet/laravel-cms-addon/js/edit/jquery.js"></script>
    <!-- Edit scripts -->
-   <script src="/packages/cednet/cms/js/edit/edit.js"></script>
-   <link href="/packages/cednet/cms/css/edit/edit.css" rel="stylesheet">
-   <script src="/packages/cednet/cms/js/jquery.cookie.js"></script>
+   <script src="/packages/cednet/laravel-cms-addon/js/edit/edit.js"></script>
+   <link href="/packages/cednet/laravel-cms-addon/css/edit/edit.css" rel="stylesheet">
+   <script src="/packages/cednet/laravel-cms-addon/js/jquery.cookie.js"></script>
 
    <!-- Redactor -->
-   <script src="/packages/cednet/cms/redactor/plugins/edit.js"></script>
-   <script src="/packages/cednet/cms/redactor/redactor.min.js"></script>
-   <link href="/packages/cednet/cms/redactor/redactor.css" rel="stylesheet">
+   <script src="/packages/cednet/laravel-cms-addon/redactor/plugins/edit.js"></script>
+   <script src="/packages/cednet/laravel-cms-addon/redactor/redactor.min.js"></script>
+   <link href="/packages/cednet/laravel-cms-addon/redactor/redactor.css" rel="stylesheet">
 
    <!-- DateTime Picker -->
-   <script src="/packages/cednet/cms/js/bootstrap-datetimepicker.min.js"></script>
-   <link href="/packages/cednet/cms/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+   <script src="/packages/cednet/laravel-cms-addon/js/bootstrap-datetimepicker.min.js"></script>
+   <link href="/packages/cednet/laravel-cms-addon/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 
    <!-- jsTree -->
-   <link href="/packages/cednet/cms/js/edit/jstree/themes/default/style.css" rel="stylesheet">
-   <script src="/packages/cednet/cms/js/edit/jquery.contextMenu.js"></script>
-   <script src="/packages/cednet/cms/js/edit/jstree/jquery.jstree.js"></script>
+   <link href="/packages/cednet/laravel-cms-addon/js/edit/jstree/themes/default/style.css" rel="stylesheet">
+   <script src="/packages/cednet/laravel-cms-addon/js/edit/jquery.contextMenu.js"></script>
+   <script src="/packages/cednet/laravel-cms-addon/js/edit/jstree/jquery.jstree.js"></script>
 
 
 </head>
@@ -128,18 +128,18 @@
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-transition.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-alert.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-modal.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-dropdown.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-scrollspy.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-tab.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-tooltip.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-popover.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-button.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-collapse.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-carousel.js"></script>
-<script src="/packages/cednet/cms/bootstrap/js/bootstrap-typeahead.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-transition.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-alert.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-modal.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-dropdown.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-scrollspy.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-tab.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-tooltip.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-popover.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-button.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-collapse.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-carousel.js"></script>
+<script src="/packages/cednet/laravel-cms-addon/bootstrap/js/bootstrap-typeahead.js"></script>
 
 </body>
 </html>
