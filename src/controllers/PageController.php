@@ -10,7 +10,7 @@ use App;
 use Cms\Models\Page;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
-use Cms\Libraries\H;
+use Cms\Libraries\Helper;
 
 class PageController extends CmsBaseController
 {
@@ -22,18 +22,6 @@ class PageController extends CmsBaseController
         //Breadcrumbs
         View::share('breadcrumbs', array());
 
-    }
-
-    public function homepage()
-    {
-        $page = Page::home()->first();
-        if(!$page) {
-            die('Missing a start page in CMS. <a href="'.route('login').'">Login and create one</a>');
-        }
-
-        $this->setViewVariables($page);
-
-        return View::make("cms::templates." . $page->template);
     }
 
     /**
@@ -75,7 +63,7 @@ class PageController extends CmsBaseController
 
     public function search()
     {
-        $q = H::strip_tags_content(Input::get('q'));
+        $q = Helper::strip_tags_content(Input::get('q'));
         View::share('title', Lang::get('cms::m.search-result-for') . " " . $q);
 
         return View::make('cms::search', array(

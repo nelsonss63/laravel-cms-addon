@@ -59,10 +59,10 @@
 
             <ul class="nav pull-right">
                @if(Auth::check() && Auth::user()->edit)
-               <li><a href="{{ route('edit') }}">{{ Lang::get('cms::m.edit') }}</a></li>
+               <li><a href="{{ route('cmsEdit') }}">{{ Lang::get('cms::m.edit') }}</a></li>
                @endif
                @if(Auth::check() && Auth::user()->admin)
-               <li><a href="{{ route('admin') }}">{{ Lang::get('cms::m.admin') }}</a></li>
+               <li><a href="{{ route('cmsAdmin') }}">{{ Lang::get('cms::m.admin') }}</a></li>
                @endif
                <li class="dropdown">
                   <a class="dropdown-toggle js-activated" data-toggle="dropdown" href="#">
@@ -75,11 +75,10 @@
                   </a>
                   <ul class="dropdown-menu">
                      @if(Auth::check())
-                     <li><a href="{{ route('account') }}">{{ Lang::get('cms::m.my-account') }}</a></li>
                      <li class="divider"></li>
-                     <li><a href="{{ route('logout') }}">{{ Lang::get('cms::m.logout') }}</a></li>
+                     <li><a href="{{ route('cmsLogout') }}">{{ Lang::get('cms::m.logout') }}</a></li>
                      @else
-                     <li><a href="{{ route('login') }}">{{ Lang::get('cms::m.login') }}</a></li>
+                     <li><a href="{{ route('cmsLogin') }}">{{ Lang::get('cms::m.login') }}</a></li>
                      @endif
                   </ul>
                </li>

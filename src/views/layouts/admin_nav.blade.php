@@ -15,13 +15,13 @@
                      <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu">
-                     <li class="active"><a href="{{ route('logout') }}">Log out</a></li>
+                     <li class="active"><a href="{{ route('cmsLogout') }}">Log out</a></li>
                   </ul>
                </li>
             </ul>
             <ul class="nav">
-               <li class="active"><a href="{{ route('edit') }}">{{ Lang::get('cms::m.edit') }}</a></li>
-               <li class="active"><a href="{{ route('admin') }}">{{ Lang::get('cms::m.admin') }}</a></li>
+               <li class="active"><a href="{{ route('cmsEdit') }}">{{ Lang::get('cms::m.edit') }}</a></li>
+               <li class="active"><a href="{{ route('cmsAdmin') }}">{{ Lang::get('cms::m.admin') }}</a></li>
             </ul>
          </div><!--/.nav-collapse -->
       </div>

@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Lang;
 
 use Cms\Models\Page;
-use Cms\Libraries\H;
+use Cms\Libraries\Helper;
 
 class MenusController extends \Cednet\Cms\CmsAdminBaseController
 {
@@ -33,7 +33,7 @@ class MenusController extends \Cednet\Cms\CmsAdminBaseController
         if($menu_id) {
 
             $menu = Menu::find($menu_id);
-            if(!$menu) return Redirect::route('edit');
+            if(!$menu) return Redirect::route('cmsEdit');
             View::share("title", Lang::get('cms::m.update-menu') . ": " . $menu->title);
 
             Former::populate($menu);
@@ -59,7 +59,7 @@ class MenusController extends \Cednet\Cms\CmsAdminBaseController
         }
         $menu->title = Input::get('title');
         $menu->edit_order = Input::get('edit_order');
-        $menu->slug = H::createMenuSlug(Input::get('title'), $menu_id);
+        $menu->slug = Helper::createMenuSlug(Input::get('title'), $menu_id);
         $menu->save();
 
         return Redirect::route('editMenu', array($menu->id))->with('flash_notice', Lang::get('cms::m.saved'));
@@ -81,7 +81,7 @@ class MenusController extends \Cednet\Cms\CmsAdminBaseController
             'parent_id' => 0
         ));
 
-        return Redirect::route('edit')->with('flash_notice', Lang::get('cms::m.menu-removed'));
+        return Redirect::route('cmsEdit')->with('flash_notice', Lang::get('cms::m.menu-removed'));
     }
 
     /** AJAX */

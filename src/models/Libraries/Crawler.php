@@ -2,7 +2,7 @@
 
 namespace Cms\Models;
 
-use Cms\Libraries\H;
+use Cms\Libraries\Helper;
 use Cms\Models\Crawl;
 use Cms\Models\Page;
 use Illuminate\Support\Facades\DB;
@@ -189,7 +189,7 @@ class Crawler {
                "published" => $crawl->published,
                "menu_id" => $crawl->menu_id,
                "parent_id" => $crawl->parent_id,
-               "slug" => $crawl->slug ? $crawl->slug : H::createPageSlug($crawl->title)
+               "slug" => $crawl->slug ? $crawl->slug : Helper::createPageSlug($crawl->title)
             ),
             "content" => array(
                "title" => $crawl->title,

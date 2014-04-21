@@ -6,7 +6,7 @@
 
 //Admin & Edit
 //RESTful-baserat routing (allt sköts i Controllern)
-Route::group(array('prefix' => 'cms/admin', 'before' => 'admin'), function() {
+Route::group(array('prefix' => 'cms/admin', 'before' => 'cmsAdmin'), function() {
 
     //Crawler feature
     Route::get('crawler', array('as' => 'crawler', 'uses' => '\Cednet\Cms\CrawlerController@crawler'));
@@ -25,14 +25,14 @@ Route::group(array('prefix' => 'cms/admin', 'before' => 'admin'), function() {
     Route::post('user/{userId}', '\Cednet\Cms\UsersController@saveUser');
     Route::get('remove-user/{userId}', array('as' => 'removeUser', 'uses' => '\Cednet\Cms\UsersController@removeUser'));
 
-    Route::get('/', array('as' => 'admin', 'uses' => '\Cednet\Cms\AdminController@start'));
+    Route::get('/', array('as' => 'cmsAdmin', 'uses' => '\Cednet\Cms\AdminController@start'));
 
 });
 
 /**
  * Edit
  */
-Route::group(array('prefix' => 'cms/edit', 'before' => 'edit'), function() {
+Route::group(array('prefix' => 'cms/edit', 'before' => 'cmsEdit'), function() {
 
     //New page
     Route::get('create-page-start', array('as' => 'createPageStart', 'uses' => '\Cednet\Cms\PagesController@createPageStart'));
@@ -60,45 +60,45 @@ Route::group(array('prefix' => 'cms/edit', 'before' => 'edit'), function() {
     Route::post('edit-menu/{menuId?}', '\Cednet\Cms\MenusController@saveMenu');
     Route::get('remove-menu/{menuId}', array('as' => 'removeMenu', 'uses' => '\Cednet\Cms\MenusController@removeMenu'));
 
-    Route::get('/', array('as' => 'edit', 'uses' => '\Cednet\Cms\PagesController@start'));
+    Route::get('/', array('as' => 'cmsEdit', 'uses' => '\Cednet\Cms\PagesController@start'));
 });
 
-//CMS Account Pages
-Route::group(array('before' => 'auth'), function() {
-    Route::get('account', array('as' => 'account', 'uses' => '\Cednet\Cms\AccountController@index'));
-});
+//CMS Login
+Route::get('cms/login', array('as' => 'cmsLogin', 'uses' => '\Cednet\Cms\PageController@login'));
 
-//CMS slugs
-Route::any('search', array('as' => 'search', 'uses' => '\Cednet\Cms\PageController@search'));
-Route::get('login', array('as' => 'login', 'uses' => '\Cednet\Cms\PageController@login'));
-Route::get('{slug}/{args}', '\Cednet\Cms\PageController@page')->where('slug', '(.*)'); //last route tries to catch anything (sends to 404 if not found, see PageController@page function)
-Route::get('/', '\Cednet\Cms\PageController@homepage');
+/**
+ * All routes for this CMS are predefined URL:s created by the CMS
+ * This CMS is not meant to have thousands of pages = this is OK up to XX numbers of pages
+ */
+foreach(\Cms\Libraries\Helper::getRoutes() as $page) {
+    Route::get($page->slug, '\Cednet\Cms\PageController@page');
+}
 
 
 /**
  * Login
  */
 
-Route::post('login', function () {
+Route::post('cms/login', function () {
     $user = array(
         'username' => Input::get('username'),
-        'password' => Input::get('password')
+        'password' => Input::get('password'),
+        'edit' => 1, //ensures atleast "edit" permissions is required
     );
-
     if (Auth::attempt($user)) {
-        return Redirect::route('edit')
+        return Redirect::route('cmsEdit')
             ->with('flash_notice', 'Du är nu inloggad.');
     }
 
     // authentication failure! lets go back to the login page
-    return Redirect::route('login')
+    return Redirect::route('cmsLogin')
         ->with('flash_error', 'Felaktigt användarnamn / lösenord.')
         ->withInput();
 });
-Route::get('logout', array('as' => 'logout', function () {
+Route::get('cms/logout', array('as' => 'cmsLogout', function () {
     Auth::logout();
 
-    return Redirect::route('login')
+    return Redirect::route('cmsLogin')
         ->with('flash_notice', 'Du har nu loggats ut.');
 }))->before('auth');
 
@@ -107,24 +107,14 @@ Route::get('logout', array('as' => 'logout', function () {
  * FILTERS
  */
 
-Route::filter('auth', function()
+Route::filter('cmsAdmin', function()
 {
-    if (Auth::guest()) return Redirect::route('login');
+    if (Auth::guest()) return Redirect::route('cmsLogin');
+    if (!Auth::user()->admin) return Redirect::route('cmsLogin')->with('flash_notice', 'Du måste vara Admin för att komma åt admin.');
 });
 
-Route::filter('admin', function()
+Route::filter('cmsEdit', function()
 {
-    if (Auth::guest()) return Redirect::route('login');
-    if (!Auth::user()->admin) return Redirect::route('login')->with('flash_notice', 'Du måste vara Admin för att komma åt admin.');
-});
-
-Route::filter('edit', function()
-{
-    if (Auth::guest()) return Redirect::route('login');
-    if (!Auth::user()->edit) return Redirect::route('login')->with('flash_notice', 'Du måste vara Redaktör för att komma åt edit.');
-});
-
-Route::filter('guest', function()
-{
-    if (Auth::check()) return Redirect::to('/');
+    if (Auth::guest()) return Redirect::route('cmsLogin');
+    if (!Auth::user()->edit) return Redirect::route('cmsLogin')->with('flash_notice', 'Du måste vara Redaktör för att komma åt edit.');
 });

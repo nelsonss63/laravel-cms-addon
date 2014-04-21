@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Lang;
 
 use Cms\Models\Page;
-use Cms\Libraries\H;
+use Cms\Libraries\Helper;
 
 class PagesController extends \Cednet\Cms\CmsAdminBaseController
 {
@@ -84,12 +84,12 @@ class PagesController extends \Cednet\Cms\CmsAdminBaseController
         $page->menu_id = $menu_id;
         $page->allow_dropdown = Input::get('allow_dropdown');
         $page->parent_id = $parent_id;
-        $page->link = H::createLink(Input::get('link'));
+        $page->link = Helper::createLink(Input::get('link'));
         $page->order = Input::get('order');
         $page->published = Input::get('published') ? 1 : 0;
         $page->publish_start = Input::get('publish_start');
         $page->publish_end = Input::get('publish_end');
-        $page->slug = H::createPageSlug(Input::get('title'));
+        $page->slug = Helper::createPageSlug(Input::get('title'));
         $page->save();
 
         //Create URL
@@ -110,7 +110,7 @@ class PagesController extends \Cednet\Cms\CmsAdminBaseController
     public function editPage($pageId = 0, $contentId = false)
     {
         $page = Page::find($pageId);
-        if(!$page) return Redirect::route('edit');
+        if(!$page) return Redirect::route('cmsEdit');
         if(!ctype_digit(strval($pageId))) throw new Exception('Invalid page-ID! Must be an integer value');
         if($pageId <= 0) throw new Exception($pageId . ' is not a valid page-ID');
         if(is_numeric($contentId) AND $contentId > 0) {
@@ -153,12 +153,12 @@ class PagesController extends \Cednet\Cms\CmsAdminBaseController
         //$page->parent_id = $parent_id;
         $page->controller = Input::get('controller');
         $page->template = Input::get('template');
-        $page->link = H::createLink(Input::get('link'));
+        $page->link = Helper::createLink(Input::get('link'));
         $page->order = Input::get('order');
         $page->published = Input::get('published');
         $page->publish_start = Input::get('publish_start');
         $page->publish_end = Input::get('publish_end');
-        $page->slug = H::createPageSlug(Input::get('title'), $pageId);
+        $page->slug = Helper::createPageSlug(Input::get('title'), $pageId);
         $page->save();
 
         //Modify URL after save according to new info
