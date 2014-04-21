@@ -4,8 +4,7 @@ namespace Cms\Models;
 
 class Crawl extends \Eloquent {
 
-   protected $table = "crawl";
-   protected $primaryKey = "id";
+   protected $table = "cms_crawl";
    public $timestamps = TRUE;
 
 }

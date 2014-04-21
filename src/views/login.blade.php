@@ -1,8 +1,8 @@
-@extends('cms::layouts.page')
+@extends('cms::layouts.empty')
 
 @section('content')
 
-<h1>{{ Lang::get('cms::m.login') }}</h1>
+<h1>Login to CMS admin</h1>
 
 {{ Former::horizontal_open('login')
       ->secure()

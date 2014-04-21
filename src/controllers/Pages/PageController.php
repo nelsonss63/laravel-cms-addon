@@ -27,6 +27,9 @@ class PageController extends CmsBaseController
     public function homepage()
     {
         $page = Page::home()->first();
+        if(!$page) {
+            die('Missing a start page in CMS. <a href="'.route('login').'">Login and create one</a>');
+        }
 
         $this->setViewVariables($page);
 

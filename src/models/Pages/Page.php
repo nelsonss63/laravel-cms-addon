@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 class Page extends \Eloquent
 {
 
-    protected $table = "pages";
+    protected $table = "cms_pages";
     public $timestamps = true;
 
     public static function boot() {
@@ -149,7 +149,7 @@ class Page extends \Eloquent
      */
     public static function history($pageId)
     {
-        return DB::table('content')->where("page_id", "=", $pageId)->orderBy("updated_at", "desc")->get();
+        return Content::where("page_id", "=", $pageId)->orderBy("updated_at", "desc")->get();
     }
 
     /**

@@ -6,3 +6,8 @@ UNDER DEVELOPMENT
 
 The docs will be updated soon...
 
+## Database tables
+
+Create all necessary tables using
+    php artisan migrate --package="cednet/laravel-cms-addon"
+

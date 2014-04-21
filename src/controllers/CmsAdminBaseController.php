@@ -19,7 +19,7 @@ class CmsAdminBaseController extends \Controller
         $this->nav = array(
             Lang::get('cms::m.site-settings') => route('settings'),
             Lang::get('cms::m.manage-users') => route('users'),
-            Lang::get('cms::m.crawler') => route('crawler'),
+            //Lang::get('cms::m.crawler') => route('crawler'),
             'Unsorted pages' => route('unsortedPages'),
         );
         View::share("nav", $this->nav);

@@ -10,6 +10,7 @@ namespace Cms\Models;
 class Setting extends \Eloquent
 {
 
+    protected $table = "cms_settings";
     public $timestamps = true;
     protected $fillable = array('name', 'value');
 

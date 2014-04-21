@@ -86,7 +86,7 @@ Route::post('login', function () {
     );
 
     if (Auth::attempt($user)) {
-        return Redirect::route('account')
+        return Redirect::route('edit')
             ->with('flash_notice', 'Du är nu inloggad.');
     }
 

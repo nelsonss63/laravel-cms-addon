@@ -4,8 +4,7 @@ namespace Cms\Models;
 
 class Content extends \Eloquent {
 
-   protected $table = 'content';
-   protected $primaryKey = "content_id";
+   protected $table = 'cms_page_content';
    public $timestamps = true;
    protected $touches = array('page');
 

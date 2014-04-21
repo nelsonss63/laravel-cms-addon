@@ -5,6 +5,7 @@ namespace Cms\Models;
 use Cms\Libraries\H;
 use Cms\Models\Crawl;
 use Cms\Models\Page;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Whoops\Example\Exception;
 
@@ -119,7 +120,7 @@ class Crawler {
       //Get all links and save to database
       $links = array();
       //remove any current URLs for current crawl (so we don't get duplicates)
-      DB::table('crawl_found_links')->where("crawl_id", "=", $crawl->id)->delete();
+      DB::table('cms_crawl_found_links')->where("crawl_id", "=", $crawl->id)->delete();
       //Get links from current URL (the whole page)
       preg_match_all('~a href=("|\')(.*?)\1~', $html, $all_links);
       $used_count_index = array_count_values($all_links['2']);
@@ -156,7 +157,7 @@ class Crawler {
             }
          }
          //Insert links to relations table
-         if(count($found_links) > 0) DB::table('crawl_found_links')->insert($links);
+         if(count($found_links) > 0) DB::table('cms_crawl_found_links')->insert($links);
       }
 
       //Crawl all stored links

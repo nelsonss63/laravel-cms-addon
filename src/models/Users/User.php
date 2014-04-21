@@ -7,7 +7,7 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 class User extends \Eloquent implements UserInterface, RemindableInterface {
 
-	protected $table = 'users';
+	protected $table = 'cms_users';
     protected $fillable = array('username', 'password', 'edit', 'admin');
 	protected $hidden = array('password');
 

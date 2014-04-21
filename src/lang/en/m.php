@@ -101,7 +101,7 @@ return array(
    //Admin
     'site-settings'         => 'Site Settings',
     'manage-users'          => 'Manage Users',
-    'crawler'               => 'Carwler',
+    'crawler'               => 'Crawler',
     'crawler-info'          => 'This is a crawler. It reads a domain and takes in all data for it.',
     'crawler-done'          => 'Crawler done',
     'recreate-urls'         => 'Recreate all page URL:s',
