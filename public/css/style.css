@@ -1,0 +1,112 @@
+/* Header & Info */
+#company_logo_area {
+   margin-bottom: 10px;
+}
+
+#flash_notice {
+   padding-bottom: 10px;
+}
+
+/* Titles */
+h1, h2, h3, h4, h5 {
+   padding: 5px 0 0 0;
+   margin: 0 0 10px 0;
+   line-height: normal;
+}
+h1 { font-size: 22px; }
+h1:first-child { padding: 0; }
+h2 { font-size: 19px; }
+h3 { font-size: 15px; }
+h4 { font-size: 14px; }
+h5 { font-size: 13px; }
+
+/* Search Page */
+.search_result {
+   margin-bottom: 20px;
+   padding-bottom: 20px;
+   border-bottom: dotted 1px #CECECE;
+}
+
+.search_keywords {
+   margin: 0 0 20px 0;
+   font-style: italic;
+}
+
+.search_result h1 a,.search_result h2 a,.search_result h3 a,.search_result h4 a {
+   color: #222;
+   text-decoration: none;
+}
+
+/* Document Types */
+a[href $='.pdf'] {
+   padding-right: 18px;
+   background: transparent url(images/icon_pdf.gif) no-repeat center right;
+}
+
+a[href $='.xls'] {
+   padding-right: 18px;
+   background: transparent url(images/icon_xls.gif) no-repeat center right;
+}
+
+a[href $='.xlsx'] {
+   padding-right: 18px;
+   background: transparent url(images/icon_xls.gif) no-repeat center right;
+}
+
+a[href $='.doc'] {
+   padding-right: 18px;
+   background: transparent url(images/icon_doc.gif) no-repeat center right;
+}
+
+a[href^="mailto:"] {
+   padding-right: 18px;
+   background: transparent url(images/icon_mailto.gif) no-repeat center right;
+}
+
+a.external {
+   padding-right: 18px;
+   background: transparent url(images/icon_external.png) no-repeat center right;
+}
+
+/* Edit Page */
+.edit-page { float: right; }
+.edit-page span {
+   margin-top: 3px;
+   font-size: 12px;
+   display: none;
+}
+.edit-page span a {
+   color: #444;
+   text-decoration: none;
+}
+.edit-page:hover img { display: none; }
+.edit-page:hover span { display: block; }
+
+/* Twitter Bootstrap tweaks only below */
+.sidebar-nav {
+   padding: 9px 0;
+}
+
+.container-fluid {
+   padding-right: 0px;
+   padding-left: 0px;
+}
+
+@media (min-width: 980px) {
+   /* Center content when large screen */
+   body {
+      width: 1120px;
+      margin: 0 auto;
+      padding-top: 10px;
+      padding-bottom: 40px;
+   }
+}
+
+@media (max-width: 980px) {
+   /* Enable use of floated navbar text */
+   .navbar-text.pull-right {
+      float: none;
+      padding-left: 5px;
+      padding-right: 5px;
+   }
+}
