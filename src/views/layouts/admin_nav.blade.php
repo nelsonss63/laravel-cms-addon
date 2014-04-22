@@ -9,15 +9,7 @@
          <a class="brand" href="/">CMS</a>
          <div class="nav-collapse collapse">
             <ul class="nav pull-right">
-               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                     Account
-                     <b class="caret"></b>
-                  </a>
-                  <ul class="dropdown-menu">
-                     <li class="active"><a href="{{ route('cmsLogout') }}">Log out</a></li>
-                  </ul>
-               </li>
+                <li><a href="{{ route('cmsLogout') }}">Log out</a></li>
             </ul>
             <ul class="nav">
                <li><a href="{{ route('cmsEdit') }}">{{ Lang::get('cms::m.edit') }}</a></li>
