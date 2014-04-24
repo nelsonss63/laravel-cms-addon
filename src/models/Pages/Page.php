@@ -2,7 +2,7 @@
 
 namespace Cms\Models;
 
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cache;
 
 class Page extends \Eloquent
 {
@@ -16,6 +16,13 @@ class Page extends \Eloquent
         self::deleting(function($page) {
             return $page->content()->delete();
         });
+
+        /**
+         * Remove Routes cache
+         */
+        self::created(function() { Cache::forget('cmsRoutes'); });
+        self::updated(function() { Cache::forget('cmsRoutes'); });
+        self::deleted(function() { Cache::forget('cmsRoutes'); });
     }
 
     public function content()
