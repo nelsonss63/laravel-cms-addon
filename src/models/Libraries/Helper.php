@@ -22,7 +22,7 @@ class Helper
      * @return mixed
      */
     public static function setRoutes() {
-        $routes = Page::wherePublished("1")->get();
+        $routes = @Page::wherePublished("1")->get(); //suppress error incase to ensure migrations can be run
         Cache::forever('cmsRoutes', $routes);
         return $routes;
     }
