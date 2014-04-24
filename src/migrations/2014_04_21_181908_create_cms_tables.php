@@ -62,16 +62,6 @@ class CreateCmsTables extends Migration {
         });
 
         Cms\Models\Setting::create(array(
-            "name" => "company_name",
-            "value" => "Some Company",
-        ));
-
-        Cms\Models\Setting::create(array(
-            "name" => "company_logo_url",
-            "value" => "",
-        ));
-
-        Cms\Models\Setting::create(array(
             "name" => "datepicker_format",
             "value" => "yyyy-MM-dd hh:mm:ss",
         ));
@@ -79,6 +69,11 @@ class CreateCmsTables extends Migration {
         Cms\Models\Setting::create(array(
             "name" => "extend_url_template_page",
             "value" => "cms::layouts.page",
+        ));
+
+        Cms\Models\Setting::create(array(
+            "name" => "content_section_name",
+            "value" => "content",
         ));
 
         Schema::create('cms_users', function(Blueprint $table) {
