@@ -94,9 +94,6 @@ class PageController extends CmsBaseController
      */
     private function setViewVariables($page)
     {
-        //Which URL to extend
-        View::share('extendUrl', Setting::get('extend_url_template_page'));
-
         View::share('page', $page);
         View::share('title', $page->content->title);
 

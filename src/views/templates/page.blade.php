@@ -1,10 +1,9 @@
 @extends($extendUrl)
 
 
-@section('content')
+@section($sectionName)
 
    <h1>{{ $page->content->title }}</h1>
    <p>{{ $page->content->body }}</p>
-
 
 @stop

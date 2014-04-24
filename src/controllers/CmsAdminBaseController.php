@@ -24,7 +24,6 @@ class CmsAdminBaseController extends \Controller
         );
         View::share("nav", $this->nav);
 
-        View::share("website_home", "/");
         View::share("title", false); //set default zero / false value for title
 
         //\Auth::loginUsingId(1);

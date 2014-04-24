@@ -34,12 +34,6 @@
 
 <body>
 
-@if($company_logo_url)
-<div id="company_logo_area">
-   <a href="{{ $website_home }}"><img src="{{ $company_logo_url }}" /></a>
-</div>
-@endif
-
 <div class="navbar">
    <div class="navbar-inner">
       <div class="container-fluid">
@@ -114,7 +108,7 @@
          <div class="well sidebar-nav">
 
              @if(!empty($page))
-                 {{ \Cms\Models\MenuCreator::mainNav($page) }}
+                 {{ \Cms\Models\MenuCreator::mainNav() }}
              @endif
 
          </div><!--/.well -->

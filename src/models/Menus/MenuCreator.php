@@ -69,7 +69,7 @@ class MenuCreator
     /**
      * Fetches Main Nav
      */
-    public static function mainNav(Page $page)
+    public static function mainNav(Page $page = NULL)
     {
         if(!empty($page->id_as_menu)) {
             $mainNav = self::generateMainNav($page->id_as_menu);
@@ -89,10 +89,12 @@ class MenuCreator
      * @param string $class TB class is default but can be altered from view file
      * @return string
      */
-    public static function generateMainNav($parentId = 1, $class = "nav nav-list")
+    public static function generateMainNav($parentId = 0, $class = "nav nav-list")
     {
-        //Hämta sidor
+        //Fetch pages
         $pages = Page::with("content")->published()->where("parent_id", "=", $parentId)->get();
+
+        if(count($pages) <= 0) return 'No sub-pages found';
 
         $html = '<ul class="' . $class . '">';
 

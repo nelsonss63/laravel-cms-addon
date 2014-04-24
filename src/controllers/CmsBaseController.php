@@ -13,12 +13,9 @@ class CmsBaseController extends \Controller
 
     public function __construct()
     {
-        View::share("website_home", "/");
-        View::share("title", false); //set default zero / false value for title
-        View::share("company_logo_url", Setting::get('company_logo_url'));
-        View::share("company_name", Setting::get('company_name'));
-
-        //\Auth::loginUsingId(1);
+        //Layout variables
+        View::share('extendUrl', Setting::get('extend_url_template_page'));
+        View::share('sectionName', Setting::get('content_section_name'));
     }
 
     /**
