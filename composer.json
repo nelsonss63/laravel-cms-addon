@@ -1,6 +1,6 @@
 {
     "name": "cednet/laravel-cms-addon",
-    "description": "",
+    "description": "A laravel CMS addon.",
     "authors": [
         {
             "name": "Johnny Cedergren",
