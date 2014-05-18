@@ -52,15 +52,15 @@
 
 
             <ul class="nav pull-right">
-               @if(Auth::check() && \Cms\Models\User::getUser()->edit)
+               @if(\Cms\Models\User::check() && \Cms\Models\User::getUser()->edit)
                <li><a href="{{ route('cmsEdit') }}">{{ Lang::get('cms::m.edit') }}</a></li>
                @endif
-               @if(Auth::check() && \Cms\Models\User::getUser()->admin)
+               @if(\Cms\Models\User::check() && \Cms\Models\User::getUser()->admin)
                <li><a href="{{ route('cmsAdmin') }}">{{ Lang::get('cms::m.admin') }}</a></li>
                @endif
                <li class="dropdown">
                   <a class="dropdown-toggle js-activated" data-toggle="dropdown" href="#">
-                     @if(Auth::check())
+                     @if(\Cms\Models\User::check())
                      {{ Lang::get('cms::m.hello') }} {{ \Cms\Models\User::getUser()->username }}
                      @else
                      {{ Lang::get('cms::m.my-account') }}
@@ -68,7 +68,7 @@
                      <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu">
-                     @if(Auth::check())
+                     @if(\Cms\Models\User::check())
                      <li class="divider"></li>
                      <li><a href="{{ route('cmsLogout') }}">{{ Lang::get('cms::m.logout') }}</a></li>
                      @else
@@ -114,14 +114,6 @@
          </div><!--/.well -->
       </div><!--/span-->
       <div class="span9">
-
-         {{-- On Page Edit Link for Admin And Editors --}}
-         @if(Auth::check() AND \Cms\Models\User::getUser()->admin AND (!empty($allow_edit_page) AND $allow_edit_page === TRUE))
-            <div class="edit-page">
-               <img src="/packages/cednet/laravel-cms-addon/css/images/pen-icon.png" />
-               <span><a href="{{ route('editPage', array($page->id)) }}">{{ Lang::get('cms::m.edit-page') }}</a></span>
-            </div>
-         @endif
 
          <!-- check for flash notification message -->
          @if(Session::has('flash_notice'))
