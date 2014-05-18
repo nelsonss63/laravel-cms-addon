@@ -26,7 +26,7 @@ class UsersController extends \Cednet\Cms\CmsAdminBaseController
     public function users()
     {
         return View::make('cms::users.users', array(
-            "users" => User::all()
+            "users" => \Cms\Models\User::all()
         ));
     }
 
@@ -39,7 +39,7 @@ class UsersController extends \Cednet\Cms\CmsAdminBaseController
 
     public function editUser($userId)
     {
-        $user = User::find($userId);
+        $user = \Cms\Models\User::find($userId);
         $populate = $user->getAttributes();
         unset($populate['password']);
         Former::populate($populate);
@@ -59,9 +59,9 @@ class UsersController extends \Cednet\Cms\CmsAdminBaseController
             $data['password'] = Hash::make(Input::get('password'));
         }
         if($userId) {
-            $user = User::where("id", "=", $userId)->update($data);
+            $user = \Cms\Models\User::where("id", "=", $userId)->update($data);
         } else {
-            $user = User::create($data);
+            $user = \Cms\Models\User::create($data);
         }
 
         return Redirect::route('users')->with('flash_notice', Lang::get('cms::m.saved'));
@@ -76,7 +76,7 @@ class UsersController extends \Cednet\Cms\CmsAdminBaseController
     {
         if($userId == 1) return Redirect::back()->with('flash_error', 'Cannot remove main user');
 
-        $user = User::find($userId);
+        $user = \Cms\Models\User::find($userId);
         if($user) $user->delete();
 
         return Redirect::route('users')->with('flash_notice', 'User removed');
