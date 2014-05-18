@@ -8,7 +8,8 @@
         }
     ],
     "require": {
-        "illuminate/support": "4.1.*"
+        "illuminate/support": "4.1.*",
+        "anahkiasen/former": "dev-master"
     },
     "autoload": {
         "classmap": [
