@@ -141,7 +141,7 @@ Former::horizontal_open()
          ->check($page->allow_dropdown ? TRUE : FALSE)
          }}
 
-         @if(Auth::user()->admin)
+         @if(\Cms\Models\User::getUser()->admin)
 
          {{
          Former::text('controller', Lang::get('cms::m.controller'))

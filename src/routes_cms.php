@@ -82,12 +82,7 @@ if($cmsRoutes = \Cms\Libraries\Helper::getRoutes()) {
  */
 
 Route::post('cms/login', function () {
-    $user = array(
-        'username' => Input::get('username'),
-        'password' => Input::get('password'),
-        'edit' => 1, //ensures atleast "edit" permissions is required
-    );
-    if (Auth::attempt($user)) {
+    if (\Cms\Models\User::attempt(new CmsUsername(Input::get('username')), new CmsPassword(Input::get('password')))) {
         return Redirect::route('cmsEdit')
             ->with('flash_notice', 'Du är nu inloggad.');
     }
@@ -98,11 +93,11 @@ Route::post('cms/login', function () {
         ->withInput();
 });
 Route::get('cms/logout', array('as' => 'cmsLogout', function () {
-    Auth::logout();
+    \Cms\Models\User::logout();
 
     return Redirect::route('cmsLogin')
         ->with('flash_notice', 'Du har nu loggats ut.');
-}))->before('auth');
+}))->before('cmsAuth');
 
 
 /**
@@ -111,12 +106,16 @@ Route::get('cms/logout', array('as' => 'cmsLogout', function () {
 
 Route::filter('cmsAdmin', function()
 {
-    if (Auth::guest()) return Redirect::route('cmsLogin');
-    if (!Auth::user()->admin) return Redirect::route('cmsLogin')->with('flash_notice', 'Du måste vara Admin för att komma åt admin.');
+    if (\Cms\Models\User::guest()) return Redirect::route('cmsLogin');
+    if (!\Cms\Models\User::getUser()->admin) return Redirect::route('cmsLogin')->with('flash_notice', 'Du måste vara Admin för att komma åt admin.');
 });
 
 Route::filter('cmsEdit', function()
 {
-    if (Auth::guest()) return Redirect::route('cmsLogin');
-    if (!Auth::user()->edit) return Redirect::route('cmsLogin')->with('flash_notice', 'Du måste vara Redaktör för att komma åt edit.');
+    if (\Cms\Models\User::guest()) return Redirect::route('cmsLogin');
+    if (!\Cms\Models\User::getUser()->edit) return Redirect::route('cmsLogin')->with('flash_notice', 'Du måste vara Redaktör för att komma åt edit.');
+});
+
+Route::filter('cmsAuth', function() {
+    if (\Cms\Models\User::guest()) return Redirect::route('cmsLogin');
 });

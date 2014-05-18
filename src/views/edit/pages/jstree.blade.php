@@ -74,7 +74,7 @@
                window.location.href = '{{ route('removePage') }}/' + page_id;
             }
          },
-         @if(Auth::user()->admin)
+         @if(\Cms\Models\User::getUser()->admin)
           "permissions" : {
              "label" : "{{ Lang::get('cms::m.context-permissions') }}",
                    "action" : function () {
