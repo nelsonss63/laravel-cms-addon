@@ -4,8 +4,6 @@ namespace Cms\Models;
 
 use CmsPassword;
 use CmsUsername;
-use Illuminate\Auth\UserInterface;
-use Illuminate\Auth\Reminders\RemindableInterface;
 use Illuminate\Support\Facades\Session;
 
 class User extends \Eloquent
@@ -15,15 +13,20 @@ class User extends \Eloquent
     protected $fillable = array('username', 'password', 'edit', 'admin', 'session_token');
     protected $hidden = array('password');
 
-    private $sessionTokenName = "cms_session";
+    static $sessionTokenName = "cms_session";
+
+    //Check if logged in and has user
+    public static function check() {
+        return (Session::has(self::$sessionTokenName) AND self::getUser());
+    }
 
     public static function guest() {
-        return !Session::has("cms_session");
+        return !Session::has(self::$sessionTokenName);
     }
 
     public static function getUser() {
         if(self::guest()) return false;
-        if($user = self::where("session_token", "=", Session::get('cms_session'))->first()) {
+        if($user = self::where("session_token", "=", Session::get(self::$sessionTokenName))->first()) {
             return $user;
         }
         return false;
@@ -58,12 +61,12 @@ class User extends \Eloquent
      */
     public static function loginUser(User $user)
     {
-        Session::put("cms_session", $user->session_token);
+        Session::put(self::$sessionTokenName, $user->session_token);
     }
 
     public static function logout()
     {
-        Session::forget("cms_session");
+        Session::forget(self::$sessionTokenName);
     }
 
 }
