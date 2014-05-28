@@ -32,7 +32,7 @@ You may instead place your own master template here. For example: layouts.public
 ### Injecting content to master template
 
 Default section name is "content", this is editable in the Settings. Change to any section name that you use, for example: right_column
-Meanning your master template that your view file extends must have a: @yield('right_column') line somewhere in it for the CMS content to be displayed.
+Meaning your master template that your view file extends must have a: @yield('right_column') line somewhere in it for the CMS content to be displayed.
 
 
 More usage info coming soon... Especially surrounding Menu generation in live view templates.
