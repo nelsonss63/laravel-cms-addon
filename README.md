@@ -41,7 +41,7 @@ More usage info coming soon... Especially surrounding Menu generation in live vi
 
 Add to composer.json:
 
-    "cednet/laravel-cms-addon": "*"
+    "cednet/laravel-cms-addon": "dev-master"
 
 
 Add the following service provider:
@@ -49,12 +49,12 @@ Add the following service provider:
     'Cednet\Cms\CmsServiceProvider'
 
 
-Create all necessary tables using:
+Necessary migrations for CMS data tables: (re-run this after each update)
 
     php artisan migrate --package="cednet/laravel-cms-addon"
 
 
-Publish all CMS assets
+Publish all CMS assets (re-run this after each update)
 
     php artisan asset:publish cednet/laravel-cms-addon
 
