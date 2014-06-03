@@ -14,7 +14,7 @@ class Template {
     public static function getTemplateOptions()
     {
         $templateFiles = File::files(__DIR__.'/../../views/templates');
-        $array = [];
+        $array = array();
         foreach($templateFiles as $template) {
             $file = pathinfo($template);
             list($filename) = explode(".", $file['basename']);
